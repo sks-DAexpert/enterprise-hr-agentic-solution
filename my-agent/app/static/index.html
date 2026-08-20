@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altostrat HR & IT Intelligent Assistant | Enterprise AI</title>
+  <meta name="description" content="Next-Generation Enterprise HR, HCM & ITSM Assistant powered by Gemini 2.5 Flash, WorkWeek HCM, and ServiceImmediately.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark-theme">
+  <!-- Application Container -->
+  <div class="app-layout">
+    
+    <!-- Top Navigation Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand-logo">
+          <div class="logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="url(#logo-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6366F1"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Altostrat</span>
+            <span class="brand-subtitle">Enterprise HR & ITSM Assistant</span>
+          </div>
+        </div>
+        <div class="header-status-pill">
+          <span class="status-dot pulsing"></span>
+          <span class="status-text">Gemini 2.5 Flash • Live</span>
+        </div>
+        <div class="header-shield-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>DLP & Ingress Shield Active</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="header-nav">
+        <button class="nav-tab active" data-tab="chat-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>AI Assistant</span>
+        </button>
+        <button class="nav-tab" data-tab="policy-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span>Policy Handbook</span>
+        </button>
+        <button class="nav-tab" data-tab="ticket-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>IT Tickets</span>
+        </button>
+        <button class="nav-tab" data-tab="hcm-view">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>WorkWeek Balances</span>
+        </button>
+      </nav>
+
+      <!-- User Profile Header -->
+      <div class="header-right">
+        <div class="user-profile-badge" id="user-profile-btn">
+          <div class="user-avatar">JD</div>
+          <div class="user-details">
+            <span class="user-name" id="user-name-display">John Doe</span>
+            <span class="user-meta" id="user-role-display">EMP-425 • Singapore HQ</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="app-body">
+      
+      <!-- Left Sidebar: Quick Actions & Profile Summary -->
+      <aside class="sidebar-left">
+        <!-- Live PTO Summary Card -->
+        <div class="card pto-summary-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">Leave Balances</span>
+            <span class="tag-live">Live HCM</span>
+          </div>
+          <div class="pto-grid">
+            <div class="pto-item vacation">
+              <span class="pto-value" id="sidebar-vacation-val">12.0</span>
+              <span class="pto-label">Vacation Days</span>
+            </div>
+            <div class="pto-item sick">
+              <span class="pto-value" id="sidebar-sick-val">10.0</span>
+              <span class="pto-label">Sick Days</span>
+            </div>
+            <div class="pto-item floating">
+              <span class="pto-value" id="sidebar-float-val">1.0</span>
+              <span class="pto-label">Floating Holiday</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick HR Prompts -->
+        <div class="card quick-actions-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">Suggested Inquiries</span>
+            <span class="card-action-icon">✨</span>
+          </div>
+          <div class="quick-chips-list">
+            <button class="quick-chip" data-prompt="What is the maximum allowance for ergonomic home office equipment in Singapore?">
+              <span class="chip-icon">💼</span>
+              <span class="chip-text">Ergonomic WFH Allowance</span>
+            </button>
+            <button class="quick-chip" data-prompt="How many weeks of paid maternity leave are provided in Singapore and what is the effective date?">
+              <span class="chip-icon">👶</span>
+              <span class="chip-text">Singapore Maternity Leave</span>
+            </button>
+            <button class="quick-chip" data-prompt="What are my current vacation and sick leave balances in WorkWeek?">
+              <span class="chip-icon">🏖️</span>
+              <span class="chip-text">Check PTO Balances</span>
+            </button>
+            <button class="quick-chip" data-prompt="Can I expense a client entertainment dinner hosted at a local hostess bar or room salon?">
+              <span class="chip-icon">⚠️</span>
+              <span class="chip-text">Expense Conduct Rules</span>
+            </button>
+            <button class="quick-chip" data-prompt="How does Ramp-Back Time work after returning from parental leave?">
+              <span class="chip-icon">🔄</span>
+              <span class="chip-text">Ramp-Back Time Policy</span>
+            </button>
+            <button class="quick-chip" data-prompt="Can I bring my pet python or emotional support iguana to the Singapore office desk?">
+              <span class="chip-icon">🐍</span>
+              <span class="chip-text">Office Pet Policy Refusal</span>
+            </button>
+            <button class="quick-chip" data-prompt="My laptop screen is flickering and cracked. Please create a High priority IT support ticket.">
+              <span class="chip-icon">💻</span>
+              <span class="chip-text">File Broken Laptop Ticket</span>
+            </button>
+            <button class="quick-chip" data-prompt="Please submit a vacation request for 2 days from 2026-11-10 to 2026-11-11.">
+              <span class="chip-icon">📅</span>
+              <span class="chip-text">Request 2 Days Leave</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Active IT Incidents Quick Snippet -->
+        <div class="card tickets-snippet-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">Active ITSM Tickets</span>
+            <span class="badge-count" id="active-tickets-count">1</span>
+          </div>
+          <div class="ticket-mini-item" id="sidebar-ticket-item">
+            <div class="ticket-mini-header">
+              <span class="ticket-mini-id">INC0003218</span>
+              <span class="ticket-mini-badge priority-high">High</span>
+            </div>
+            <div class="ticket-mini-title">Broken laptop screen</div>
+            <div class="ticket-mini-status">Status: <strong>New</strong></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center Main Container (Tab Views) -->
+      <section class="main-content-panel">
+        
+        <!-- Tab 1: AI Assistant Chat -->
+        <div class="tab-pane active" id="chat-view">
+          <!-- Chat Messages Container -->
+          <div class="chat-thread" id="chat-thread">
+            <!-- Welcome Hero Card -->
+            <div class="chat-welcome-banner">
+              <div class="welcome-badge">Altostrat Enterprise AI</div>
+              <h1 class="welcome-heading">How can I assist your workday today?</h1>
+              <p class="welcome-subtext">
+                Ask about Singapore HR policies, query or book WorkWeek leave balances, or file ServiceImmediately IT tickets with full enterprise grounding and citations.
+              </p>
+              <div class="capability-badges">
+                <span class="cap-badge">📌 Strict Policy Grounding</span>
+                <span class="cap-badge">⚡ WorkWeek HCM Live Reads & Writes</span>
+                <span class="cap-badge">🛠️ ServiceImmediately ITSM</span>
+                <span class="cap-badge">🔒 DLP & PII Shield</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Typing / Tool Step Indicator -->
+          <div class="typing-indicator-bar" id="typing-indicator" style="display: none;">
+            <div class="typing-spinner"></div>
+            <span class="typing-step-text" id="typing-step-text">Consulting Altostrat Knowledge & Tools...</span>
+          </div>
+
+          <!-- Chat Input Controls -->
+          <div class="chat-input-wrapper">
+            <form class="chat-input-form" id="chat-form">
+              <div class="input-controls-row">
+                <textarea 
+                  id="chat-input" 
+                  class="chat-textarea" 
+                  placeholder="Ask a policy question, check PTO, or file an IT ticket (e.g., 'What is the sick leave MC policy?')..." 
+                  rows="1"
+                  required
+                ></textarea>
+                <div class="input-actions">
+                  <button type="button" class="btn-icon" id="clear-chat-btn" title="Reset Session & Clear Chat">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                  </button>
+                  <button type="submit" class="btn-send" id="send-btn">
+                    <span>Send</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="input-footer-hint">
+              <span>Press <strong>Enter</strong> to send, <strong>Shift + Enter</strong> for new line</span>
+              <span class="session-indicator" id="session-id-display">Session: Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Policy Handbook Explorer -->
+        <div class="tab-pane" id="policy-view">
+          <div class="policy-explorer-container">
+            <div class="policy-search-header">
+              <h2>Altostrat Singapore Employee Policy Handbook</h2>
+              <div class="search-input-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="policy-search-input" placeholder="Search policy by keyword (e.g. sick leave, maternity, remote work, gifts)...">
+              </div>
+            </div>
+            <div class="policy-split-view">
+              <div class="policy-index-list" id="policy-sections-list">
+                <!-- Populated dynamically via JS -->
+              </div>
+              <div class="policy-content-viewer" id="policy-viewer">
+                <div class="viewer-placeholder">Select a policy section on the left to view full authoritative handbook text.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: IT Tickets Dashboard -->
+        <div class="tab-pane" id="ticket-view">
+          <div class="ticket-dashboard-container">
+            <div class="dashboard-header-row">
+              <div>
+                <h2>ServiceImmediately IT Support Portal</h2>
+                <p class="text-secondary">Manage and track your active hardware, software, and network incidents.</p>
+              </div>
+              <button class="btn-primary" id="open-create-ticket-modal">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>New IT Ticket</span>
+              </button>
+            </div>
+            <div class="ticket-table-card">
+              <table class="data-table" id="tickets-table">
+                <thead>
+                  <tr>
+                    <th>Ticket ID</th>
+                    <th>Category</th>
+                    <th>Short Description</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Created By</th>
+                  </tr>
+                </thead>
+                <tbody id="tickets-table-body">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: WorkWeek HCM Dashboard -->
+        <div class="tab-pane" id="hcm-view">
+          <div class="hcm-dashboard-container">
+            <div class="dashboard-header-row">
+              <div>
+                <h2>WorkWeek HCM Profile & Leave Portal</h2>
+                <p class="text-secondary">Live employee record and leave entitlement balances for Singapore operations.</p>
+              </div>
+            </div>
+            <div class="hcm-grid">
+              <div class="card profile-info-card">
+                <h3>Registered Employee Profile</h3>
+                <div class="profile-details-grid">
+                  <div class="detail-row">
+                    <span class="detail-label">Employee ID:</span>
+                    <span class="detail-val" id="hcm-emp-id">EMP-425</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Full Name:</span>
+                    <span class="detail-val" id="hcm-emp-name">John Doe</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Title / Role:</span>
+                    <span class="detail-val" id="hcm-emp-role">Senior Staff Software Engineer</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Office Location:</span>
+                    <span class="detail-val" id="hcm-emp-location">Singapore HQ (80 Pasir Panjang Rd)</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Work Arrangement:</span>
+                    <span class="detail-val badge-hybrid">Hybrid (Approved)</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="detail-label">Phone:</span>
+                    <span class="detail-val" id="hcm-emp-phone">+65 9123 4567</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card leave-balances-card">
+                <h3>Accrued Leave Balances (2026)</h3>
+                <div class="balance-bars-list">
+                  <div class="balance-bar-group">
+                    <div class="bar-header">
+                      <span>Vacation Leave</span>
+                      <strong id="hcm-vacation-text">12.0 / 20.0 Days</strong>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill fill-vacation" style="width: 60%;"></div></div>
+                  </div>
+                  <div class="balance-bar-group">
+                    <div class="bar-header">
+                      <span>Outpatient Sick Leave</span>
+                      <strong id="hcm-sick-text">10.0 / 14.0 Days</strong>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill fill-sick" style="width: 71%;"></div></div>
+                  </div>
+                  <div class="balance-bar-group">
+                    <div class="bar-header">
+                      <span>Floating Holiday</span>
+                      <strong id="hcm-float-text">1.0 / 1.0 Day</strong>
+                    </div>
+                    <div class="progress-track"><div class="progress-fill fill-floating" style="width: 100%;"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Sidebar: System Telemetry & Guardrail Inspector -->
+      <aside class="sidebar-right">
+        <!-- Live FinOps Telemetry -->
+        <div class="card telemetry-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">FinOps & Runtime Metrics</span>
+            <span class="badge-finops">Gemini 2.5</span>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-val" id="metric-session-cost">$0.0000</span>
+              <span class="metric-lbl">Session Cost (USD)</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val" id="metric-total-tokens">0</span>
+              <span class="metric-lbl">Tokens Processed</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val" id="metric-last-latency">0.0s</span>
+              <span class="metric-lbl">Last Latency</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-val" id="metric-query-count">0</span>
+              <span class="metric-lbl">Total Turns</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Guardrails & Security Monitor -->
+        <div class="card guardrails-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">Active Enterprise Guardrails</span>
+            <span class="badge-guardrail">Shield Active</span>
+          </div>
+          <div class="guardrails-list">
+            <div class="guardrail-item">
+              <div class="guardrail-status-icon active">✓</div>
+              <div class="guardrail-text">
+                <strong>Ingress Adversarial Shield</strong>
+                <span>Zero-tolerance prompt injection filter</span>
+              </div>
+            </div>
+            <div class="guardrail-item">
+              <div class="guardrail-status-icon active">✓</div>
+              <div class="guardrail-text">
+                <strong>DLP PII Redaction</strong>
+                <span>NRIC/FIN & Credit Card regex mask</span>
+              </div>
+            </div>
+            <div class="guardrail-item">
+              <div class="guardrail-status-icon active">✓</div>
+              <div class="guardrail-text">
+                <strong>Business Logic Pre-flight</strong>
+                <span>PTO overdraft & chronological bounds</span>
+              </div>
+            </div>
+            <div class="guardrail-item">
+              <div class="guardrail-status-icon active">✓</div>
+              <div class="guardrail-text">
+                <strong>Anti-Bribery & Ethics Refusal</strong>
+                <span>Hostess bar, cash gifts, kickbacks blocker</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MCP Toolset Connected -->
+        <div class="card mcp-status-card">
+          <div class="card-header-compact">
+            <span class="card-title-sm">Connected Toolsets (MCP)</span>
+            <span class="badge-connected">2 Connected</span>
+          </div>
+          <div class="mcp-list">
+            <div class="mcp-tool-pill">
+              <span class="mcp-dot"></span>
+              <span>WorkWeek HCM Tools</span>
+            </div>
+            <div class="mcp-tool-pill">
+              <span class="mcp-dot"></span>
+              <span>ServiceImmediately ITSM</span>
+            </div>
+            <div class="mcp-tool-pill">
+              <span class="mcp-dot"></span>
+              <span>Policy Retrieval (OKF RAG)</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- Slide-Over Policy Citation Drawer -->
+    <div class="citation-drawer-overlay" id="citation-drawer-overlay"></div>
+    <div class="citation-drawer" id="citation-drawer">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <span class="drawer-badge">Official Policy Excerpt</span>
+          <h3 id="drawer-section-title">Section Title</h3>
+          <span class="drawer-sec-id" id="drawer-sec-id">#sec-1.1</span>
+        </div>
+        <button class="drawer-close-btn" id="drawer-close-btn">&times;</button>
+      </div>
+      <div class="drawer-body" id="drawer-content">
+        <!-- Filled dynamically -->
+      </div>
+      <div class="drawer-footer">
+        <button class="btn-secondary" id="drawer-insert-btn">Copy Policy Citation</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

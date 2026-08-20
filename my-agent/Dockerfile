@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 RUN pip install --no-cache-dir uv==0.8.13
 
@@ -22,7 +22,7 @@ COPY ./pyproject.toml ./README.md ./uv.lock* ./
 
 COPY ./app ./app
 
-RUN uv sync --frozen
+RUN uv sync
 
 ARG AGENT_VERSION=0.0.0
 ENV AGENT_VERSION=${AGENT_VERSION}

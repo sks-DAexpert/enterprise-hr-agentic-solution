@@ -24,9 +24,14 @@ packaged Agent Engine.
 
 import inspect
 import json
+from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request, encoders, responses
-from vertexai.agent_engines.templates.adk import AdkApp
+
+try:
+    from vertexai.agent_engines.templates.adk import AdkApp
+except ImportError:
+    AdkApp = None
 
 from app.app_utils import services
 
@@ -38,7 +43,9 @@ def _no_op_instrumentor_builder(project_id: str) -> None:
 
 def attach_reasoning_engine_routes(app: FastAPI) -> None:
     """Register reasoning_engine routes that dispatch to an AdkApp."""
-    runtime: AdkApp | None = None
+    if AdkApp is None:
+        return
+    runtime: Any = None
     streaming_methods: set[str] = set()
     sync_methods: set[str] = set()
 
