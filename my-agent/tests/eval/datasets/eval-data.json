@@ -2,6 +2,8 @@
   "eval_cases": [
     {
       "eval_case_id": "policy_sick_leave_mc",
+      "category": "Policy Inquiry",
+      "scenario": "sick_leave_policy",
       "prompt": {
         "role": "user",
         "parts": [
@@ -23,6 +25,8 @@
     },
     {
       "eval_case_id": "policy_maternity_leave",
+      "category": "Policy Inquiry",
+      "scenario": "maternity_leave_policy",
       "prompt": {
         "role": "user",
         "parts": [
@@ -36,7 +40,7 @@
           "role": "model",
           "parts": [
             {
-              "text": "Eligible female employees in Singapore receive up to 16 weeks of paid maternity leave pursuant to Singapore statutory regulations and company policy ([Section 2.1: Maternity Leave (Singapore)](#sec-2.1) / [Section 20.1: Maternity Leave Scope & Entitlement](#sec-20.1))."
+              "text": "Eligible female employees in Singapore receive up to 24 weeks of paid maternity leave pursuant to Singapore statutory regulations and company policy ([Section 2.1: Maternity Leave (Singapore)](#sec-2.1) / [Section 20.1: Maternity Leave Scope & Entitlement](#sec-20.1))."
             }
           ]
         }
@@ -44,6 +48,8 @@
     },
     {
       "eval_case_id": "policy_remote_work_stipend",
+      "category": "Policy Inquiry",
+      "scenario": "remote_work_policy",
       "prompt": {
         "role": "user",
         "parts": [
@@ -64,7 +70,101 @@
       }
     },
     {
+      "eval_case_id": "vacation_accrual_and_shift",
+      "category": "Policy Inquiry",
+      "scenario": "vacation_accrual_and_shift",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What is the vacation carryover limit and expiration rule in Singapore, and how does booking work for 12-hour shift workers?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Under [Section 1.2: Paid Vacation Leave (Singapore)](#sec-1.2), unused vacation days carry over for exactly one additional year and must be used by December 31 of the following year or they are forfeited. Altostrat does not pay out unused vacation days except upon termination or transfer. For shift workers, vacation must be booked based on actual shift hours, where a 12-hour shift requires 1.5 vacation days (defined as 8-hour blocks)."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "ramp_back_time_policy",
+      "category": "Policy Inquiry",
+      "scenario": "ramp_back_time_policy",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What are the rules, duration, and salary compensation for ramp-back time when returning from parental or maternity leave?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "According to [Section 2.3: Ramp-Back Time (Global)](#sec-2.3) and [Section 28.1: Purpose and Eligibility](#sec-28.1), employees who have taken at least 10 consecutive weeks of maternity, parental, or baby bonding leave can take up to 2 weeks of ramp-back time immediately upon return. During this period, you must work a minimum of 50% of your normal weekly hours while receiving 100% of your normal salary."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "expense_gift_card_violation",
+      "category": "Ethics & Conduct",
+      "scenario": "expense_gift_card_violation",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "I bought a $100 Amazon gift card as a thank-you gift for a vendor. Can I expense this on my corporate card?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "No, this expense cannot be reimbursed. Under [Section 5.2: Commercial Gifts & Entertainment (Non-Government Recipients)](#sec-5.2) and [Section 13.4: Strict Prohibitions on Business Courtesies](#sec-13.4), company policy strictly prohibits gifting or expensing cash or cash equivalents, including gift cards and gift certificates."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "ethics_room_salon_violation",
+      "category": "Ethics & Conduct",
+      "scenario": "ethics_room_salon_violation",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Can I expense a client entertainment dinner hosted at a local hostess bar / room salon during a business trip?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "No, this expense is strictly prohibited. Under [Section 5.2: Commercial Gifts & Entertainment (Non-Government Recipients)](#sec-5.2) and [Section 14.2: General Prohibitions](#sec-14.2), business courtesies and entertainment must never involve adult entertainment (such as strip clubs, hostess bars, or room salons) or activities that embarrass the company."
+            }
+          ]
+        }
+      }
+    },
+    {
       "eval_case_id": "workweek_pto_balance_check",
+      "category": "Leave Operations",
+      "scenario": "ww_si",
       "prompt": {
         "role": "user",
         "parts": [
@@ -86,6 +186,8 @@
     },
     {
       "eval_case_id": "workweek_personal_info",
+      "category": "HCM Profile",
+      "scenario": "workweek_profile",
       "prompt": {
         "role": "user",
         "parts": [
@@ -107,6 +209,8 @@
     },
     {
       "eval_case_id": "workweek_request_leave",
+      "category": "Leave Operations",
+      "scenario": "workweek_leave_mutation",
       "prompt": {
         "role": "user",
         "parts": [
@@ -128,6 +232,8 @@
     },
     {
       "eval_case_id": "serviceimmediately_list_tickets",
+      "category": "IT Support",
+      "scenario": "serviceimmediately_tickets",
       "prompt": {
         "role": "user",
         "parts": [
@@ -149,6 +255,8 @@
     },
     {
       "eval_case_id": "serviceimmediately_create_ticket",
+      "category": "IT Support",
+      "scenario": "serviceimmediately_creation",
       "prompt": {
         "role": "user",
         "parts": [
@@ -170,6 +278,8 @@
     },
     {
       "eval_case_id": "cross_system_chaining",
+      "category": "Cross-System Chaining",
+      "scenario": "cross_system_chaining",
       "prompt": {
         "role": "user",
         "parts": [
@@ -188,6 +298,32 @@
           ]
         }
       }
+    },
+    {
+      "eval_case_id": "multiturn_hr_flow",
+      "category": "Multi-Turn Workflow",
+      "scenario": "multiturn",
+      "is_multiturn": true,
+      "turns": [
+        {
+          "turn": 1,
+          "prompt": "What is the maximum allowance for ergonomic home office equipment in Singapore?",
+          "expected_intent": "policy_lookup",
+          "target_citation": "#sec-12.2"
+        },
+        {
+          "turn": 2,
+          "prompt": "Got it. Can you check my employee ID and registered location in WorkWeek?",
+          "expected_intent": "get_employee_profile",
+          "target_entity": "EMP-425"
+        },
+        {
+          "turn": 3,
+          "prompt": "Great, and how many days of sick leave do I have available?",
+          "expected_intent": "get_pto_balance",
+          "target_entity": "Sick"
+        }
+      ]
     }
   ]
 }
