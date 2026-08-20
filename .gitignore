@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv
+.venv/
+venv/
+env/
+ENV/
+
+# ADK & Agents CLI
+.adk/
+.google-agents-cli/
+*.log
+
+# Sensitive Files
+.env
+!my-agent/.env.example
+*.pem
+*-key.json
+credentials*.json
+
+# Scratch & Temporary Files
+scratch/
+tmp/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,193 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "policy_sick_leave_mc",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "How many days of sick leave can I take in Singapore before requiring a Medical Certificate (MC), and what is the submission deadline?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Under the Altostrat Singapore policy ([Section 1.1: Outpatient Sick Time & Hospitalization Leave (Singapore)](#sec-1.1) and [Section 19.4: Notification and Medical Certificates (MC)](#sec-19.4)), if you are sick for more than two consecutive work days, you must submit a sick certificate (MC) from a registered medical practitioner via WorkWeek within 48 hours."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "policy_maternity_leave",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What is the paid maternity leave entitlement for eligible female employees in Singapore?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Eligible female employees in Singapore receive up to 16 weeks of paid maternity leave pursuant to Singapore statutory regulations and company policy ([Section 2.1: Maternity Leave (Singapore)](#sec-2.1) / [Section 20.1: Maternity Leave Scope & Entitlement](#sec-20.1))."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "policy_remote_work_stipend",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Can I claim home office equipment under the remote work policy?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Under [Section 12.2: Remote Work & Ergonomic Allowance](#sec-12.2), eligible full-time employees can claim up to SGD 500 as a one-time ergonomic home office setup reimbursement with valid receipts."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "workweek_pto_balance_check",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "How many days of vacation and sick leave do I have remaining in WorkWeek?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "According to WorkWeek for employee EMP-425, you currently have 16.0 days of Vacation leave and 10.0 days of Sick leave remaining."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "workweek_personal_info",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Please show my profile details and contact address registered in WorkWeek."
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your WorkWeek profile for EMP-425 lists John Doe, Software Engineer, located in Singapore."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "workweek_request_leave",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "I want to request 2 days of Vacation from 2026-09-10 to 2026-09-11 in WorkWeek."
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your vacation request for 2 days from 2026-09-10 to 2026-09-11 has been submitted successfully in WorkWeek."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "serviceimmediately_list_tickets",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What is the status of my open IT tickets in ServiceImmediately?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Retrieving your tickets from ServiceImmediately for employee EMP-425 shows your active support tickets and their statuses."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "serviceimmediately_create_ticket",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Please create an IT support ticket in ServiceImmediately for a broken laptop screen with High priority."
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Your ticket for 'Broken laptop screen' under category Hardware with priority 2 - High has been created in ServiceImmediately."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "eval_case_id": "cross_system_chaining",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "What is the policy for replacement monitors, and can you check if I have any open tickets for hardware in ServiceImmediately?"
+          }
+        ]
+      },
+      "reference": {
+        "response": {
+          "role": "model",
+          "parts": [
+            {
+              "text": "Under [Section 12.2: Remote Work & Ergonomic Allowance](#sec-12.2), monitor replacements are covered under IT equipment provisions. Checking ServiceImmediately displays your existing hardware tickets."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
